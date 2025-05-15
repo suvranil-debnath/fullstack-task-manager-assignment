@@ -10,7 +10,7 @@ const port = process.env.PORT;
 
 // ✅ FIX: Set proper CORS options
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://whattodonext24.netlify.app/',
   credentials: true,
 }));
 
