@@ -2,8 +2,8 @@
 
 A full-featured ToDo list application with authentication and theme support — powered by a **Node.js + MongoDB Atlas backend** and a **Vite + React + TailwindCSS frontend**.
 
-🌐 **Live Demo**: [https://your-demo-link.netlify.app](https://your-demo-link.netlify.app)
-
+🌐 **Live Demo**: https://whattodonext24.netlify.app/
+    Server Deployed at Render (https://fullstack-task-manager-assignment.onrender.com)
 ---
 
 ## 🚀 Tech Stack
