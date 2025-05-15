@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import { server } from "./main";
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -10,25 +12,23 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post(`${server}/api/auth/login`, {
+        username,
+        password,
       });
 
-      const data = await response.json();
+      const data = response.data;
 
-      if (response.ok) {
-        alert(data.msg);
-        navigate('/todo', { state: { userId: data.userId } });
-      } else {
-        alert(data.msg || 'Login failed');
-      }
+      alert(data.msg);
+      navigate('/todo', { state: { userId: data.userId } });
+
     } catch (err) {
       console.error(err);
-      alert('Server error');
+      if (err.response && err.response.data && err.response.data.msg) {
+        alert(err.response.data.msg);
+      } else {
+        alert('Server error');
+      }
     }
   };
 

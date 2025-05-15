@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import { server } from "./main";
 
 function RegisterPage() {
   const [username, setUsername] = useState('');
@@ -10,25 +12,22 @@ function RegisterPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post(`${server}/api/auth/register`, {
+        username,
+        password,
       });
 
-      const data = await response.json();
+      const data = response.data;
 
-      if (response.ok) {
-        alert(data.msg);
-        navigate('/');
-      } else {
-        alert(data.msg || 'Registration failed');
-      }
+      alert(data.msg);
+      navigate('/');
     } catch (err) {
       console.error(err);
-      alert('Server error');
+      if (err.response && err.response.data && err.response.data.msg) {
+        alert(err.response.data.msg);
+      } else {
+        alert('Server error');
+      }
     }
   };
 
