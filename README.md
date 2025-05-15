@@ -1,11 +1,8 @@
 # 📝 Full Stack ToDo App
 
 A full-featured ToDo list application with authentication and theme support — powered by a **Node.js + MongoDB Atlas backend** and a **Vite + React + TailwindCSS frontend**.
-
-🌐 **Live Demo**: https://whattodonext24.netlify.app/
-
 ---
-Server Deployed at Render (https://fullstack-task-manager-assignment.onrender.com)
+🌐 **Live Demo**: https://whattodonext24.netlify.app/
 ---
 
 ## 🚀 Tech Stack
@@ -23,7 +20,9 @@ Server Deployed at Render (https://fullstack-task-manager-assignment.onrender.co
 - **TailwindCSS** – for utility-first styling
 - **Axios** – for API communication
 - **React Router DOM** – for client-side routing
-
+### Deployment
+--Frontend on Netlify
+--Backend on Render (https://fullstack-task-manager-assignment.onrender.com)
 ---
 
 ## 📦 Features
