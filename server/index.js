@@ -1,19 +1,24 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDb } from "./db.js";
-
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
-
 const port = process.env.PORT;
+
+// ✅ FIX: Set proper CORS options
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
+
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
-
-
-app.use(express.json());
 
 // importing routes
 import toDoRouter from "./routes/todolist.js";
