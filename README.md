@@ -21,8 +21,8 @@ A full-featured ToDo list application with authentication and theme support — 
 - **Axios** – for API communication
 - **React Router DOM** – for client-side routing
 ### Deployment
---Frontend on Netlify
---Backend on Render (https://fullstack-task-manager-assignment.onrender.com)
+- Frontend on Netlify
+- Backend on Render (https://fullstack-task-manager-assignment.onrender.com)
 ---
 
 ## 📦 Features
